@@ -63,6 +63,8 @@ The ESP device is programmed using Arduino. It is set up to read RFID data and s
 
 To run the script, navigate to the directory containing the script and run the following command:
 
+> _NOTE:_ Remenber to change esp8266's ip_adress in python script.
 ```bash
 python lock_server.py
 ```
+`open_now.py` is for sending open-door signal immediately.
