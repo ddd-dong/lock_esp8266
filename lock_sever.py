@@ -1,13 +1,20 @@
-from rfid_wifi.db import DB
+from db import DB
 import requests
 from pymongo import MongoClient
 import datetime
 import time
 
+#----
+import os
+from dotenv import load_dotenv
+index_path =  os.path.dirname(os.path.abspath(__file__))
+
+load_dotenv(index_path+"/.env")
+#----
 
 openfoor=False
 esp_ip = "192.168.105.42"
-url = "mongodb+srv://tst:D1S6yHVKzPW6Sng3@cluster0.wbztfhw.mongodb.net/?retryWrites=true&w=majority"
+url = f"mongodb+srv://tst:{os.getenv('mongo_db_password')}@cluster0.wbztfhw.mongodb.net/?retryWrites=true&w=majority"
 golbal_permission_list = ("admin","user","guest")
 
 card_db = DB(url)
